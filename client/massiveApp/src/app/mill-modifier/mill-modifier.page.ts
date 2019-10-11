@@ -4,18 +4,18 @@ import { ApiService } from '../api.service';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 
-@Component({
-  selector: 'app-mill-modifier',
-  templateUrl: './mill-modifier.page.html',
-  styleUrls: ['./mill-modifier.page.scss'],
-})
-
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
     const isSubmitted = form && form.submitted;
     return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
   }
 }
+
+@Component({
+  selector: 'app-mill-modifier',
+  templateUrl: './mill-modifier.page.html',
+  styleUrls: ['./mill-modifier.page.scss'],
+})
 
 export class MillModifierPage implements OnInit {
 

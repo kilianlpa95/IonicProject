@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +20,7 @@ public class MassiveController {
 	@Autowired
 	private IMassiveApp millUserService;
 	
+	@CrossOrigin(origins = "http://localhost:8100")
 	@GetMapping("/api/millUsers")
 	private List<MillUser> getMillUsers(){
 
@@ -26,6 +28,7 @@ public class MassiveController {
 		
 	}
 	
+	@CrossOrigin(origins = "http://localhost:8100")
 	@GetMapping("/api/millUsers/{id}")
 	private MillUser getMillUser(@PathVariable Long id){
 
@@ -33,6 +36,7 @@ public class MassiveController {
 		
 	}
 	
+	@CrossOrigin(origins = "http://localhost:8100")
 	@PostMapping("/api/millUser")
 	private void addMillUser(MillUser millUser) {
 		
@@ -40,6 +44,7 @@ public class MassiveController {
 		
 	}
 
+	@CrossOrigin(origins = "http://localhost:8100")
     @PutMapping("/api/millUser/{id}")
 	private void updateMillUser(MillUser millUser, @PathVariable Long id) {
 		
@@ -47,6 +52,7 @@ public class MassiveController {
 		
 	}
 	
+	@CrossOrigin(origins = "http://localhost:8100")
 	@DeleteMapping("/api/millUser/{id}")
 	private void deleteMillUser(@PathVariable Long id) {
 		

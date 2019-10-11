@@ -73,7 +73,7 @@ export class MillDetailsPage implements OnInit {
   }
   
   editMillUser(id: any) {
-    this.router.navigate([ '/mill-modifier', id ]);
+    this.router.navigate([ '/mill-modifier', id]);
   }
 
 }

@@ -3,12 +3,6 @@ import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
-
-@Component({
-  selector: 'app-mill-register',
-  templateUrl: './mill-register.page.html',
-  styleUrls: ['./mill-register.page.scss'],
-})
   
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -16,6 +10,12 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
     return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
   }
 }
+
+@Component({
+  selector: 'app-mill-register',
+  templateUrl: './mill-register.page.html',
+  styleUrls: ['./mill-register.page.scss'],
+})
 
 export class MillRegisterPage implements OnInit {
 
