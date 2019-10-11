@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/home"></ion-back-button>
+      </ion-buttons>
+      <ion-title>MillUser Details</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <div class="example-container mat-elevation-z8">
+      <div class="example-loading-shade"
+            *ngIf="isLoadingResults">
+        <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+      </div>
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title><h2>{{millUser.name}}</h2></mat-card-title>
+          <mat-card-subtitle>{{millUser.age}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-actions>
+          <a mat-flat-button color="primary" (click)="editMillUser(millUser.id)"><mat-icon>edit</mat-icon></a>
+          <a mat-flat-button color="warn" (click)="deleteMillUser(millUser.id)"><mat-icon>delete</mat-icon></a>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </ion-content>
