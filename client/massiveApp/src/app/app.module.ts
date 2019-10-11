@@ -14,20 +14,35 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, 
+  MatProgressBarModule, MatToolbarModule,
+  MatProgressSpinnerModule} from '@angular/material';
+
+const modules = [
+  MatCardModule, 
+  MatFormFieldModule, 
+  MatInputModule, 
+  MatProgressBarModule,
+  MatToolbarModule ,
+  MatProgressSpinnerModule,
+  MatButtonModule
+]
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
+    modules,
     BrowserModule,
     IonicModule.forRoot(), 
     AppRoutingModule, 
     HttpClientModule, 
     BrowserAnimationsModule,
-    DragDropModule,
+    DragDropModule, 
     FormsModule,
     ReactiveFormsModule,
     ScrollingModule],
+  exports: [modules],
   providers: [
     StatusBar,
     SplashScreen,
