@@ -29,7 +29,7 @@ export class HomePage implements OnInit{
     millUser: MillUser[] = [];
 
     millDetail(){
-      
+      this.router.navigate(['/mill-register'])
     }
 
     async getMillUsers() {
