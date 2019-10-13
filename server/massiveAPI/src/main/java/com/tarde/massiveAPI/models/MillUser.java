@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotEmpty;
 
 @Entity(name = "mill_user")
 public class MillUser implements Serializable{
@@ -19,7 +18,6 @@ public class MillUser implements Serializable{
 	private long id;
 	
 	@Column
-	@NotEmpty
 	private String name;
 	
 	@Column

@@ -2,6 +2,8 @@ package com.tarde.massiveAPI.controllers;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,12 +17,13 @@ import com.tarde.massiveAPI.models.MillUser;
 import com.tarde.massiveAPI.services.IMassiveApp;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class MassiveController {
 
 	@Autowired
 	private IMassiveApp millUserService;
 	
-	@CrossOrigin(origins = "http://localhost:8100")
+	//@CrossOrigin(origins = "http://localhost:8100")
 	@GetMapping("/api/millUsers")
 	private List<MillUser> getMillUsers(){
 
@@ -28,15 +31,15 @@ public class MassiveController {
 		
 	}
 	
-	@CrossOrigin(origins = "http://localhost:8100")
+	//@CrossOrigin(origins = "http://localhost:8100")
 	@GetMapping("/api/millUsers/{id}")
-	private MillUser getMillUser(@PathVariable Long id){
+	private MillUser getMillUser(@Valid @PathVariable Long id){
 
 		return millUserService.getMillUser(id);
 		
 	}
 	
-	@CrossOrigin(origins = "http://localhost:8100")
+	//@CrossOrigin(origins = "http://localhost:8100")
 	@PostMapping("/api/millUser")
 	private void addMillUser(MillUser millUser) {
 		
@@ -44,7 +47,7 @@ public class MassiveController {
 		
 	}
 
-	@CrossOrigin(origins = "http://localhost:8100")
+	//@CrossOrigin(origins = "http://localhost:8100")
     @PutMapping("/api/millUser/{id}")
 	private void updateMillUser(MillUser millUser, @PathVariable Long id) {
 		
@@ -52,9 +55,9 @@ public class MassiveController {
 		
 	}
 	
-	@CrossOrigin(origins = "http://localhost:8100")
+	//@CrossOrigin(origins = "http://localhost:8100")
 	@DeleteMapping("/api/millUser/{id}")
-	private void deleteMillUser(@PathVariable Long id) {
+	private void deleteMillUser(@Valid @PathVariable Long id) {
 		
 		millUserService.deleteMillUser(id);
 		
