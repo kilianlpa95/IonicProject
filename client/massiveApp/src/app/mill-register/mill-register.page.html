@@ -16,17 +16,17 @@
       <mat-card class="example-card">
         <form [formGroup]="mUserForm" (ngSubmit)="onFormSubmit()">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="mUser Name" formControlName="name"
+            <input matInput placeholder="User Name" formControlName="name"
                    [errorStateMatcher]="matcher">
             <mat-error>
               <span *ngIf="!mUserForm.get('name').valid && mUserForm.get('name').touched">Please enter Name</span>
             </mat-error>
           </mat-form-field>
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="mUser age" formControlName="age"
+            <input matInput placeholder="User age" formControlName="age"
                    [errorStateMatcher]="matcher">
             <mat-error>
-              <span *ngIf="!mUserForm.get('price').valid && mUserForm.get('age').touched">Please enter age</span>
+              <span *ngIf="!mUserForm.get('age').valid && mUserForm.get('age').touched">Please enter age</span>
             </mat-error>
           </mat-form-field>
           <div class="button-row">
