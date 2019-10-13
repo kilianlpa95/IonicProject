@@ -1,7 +1,7 @@
 <ion-header>
     <ion-toolbar color="primary">
       <ion-buttons slot="start">
-        <ion-back-button defaultHref="/mill-detail/{{_id}}"></ion-back-button>
+        <ion-back-button defaultHref="/mill-detail/{{id}}"></ion-back-button>
       </ion-buttons>
       <ion-title>MillUser Edit</ion-title>
     </ion-toolbar>
@@ -9,10 +9,6 @@
   
   <ion-content>
     <div class="example-container mat-elevation-z8">
-      <div class="example-loading-shade"
-           *ngIf="isLoadingResults">
-        <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
-      </div>
       <mat-card class="example-card">
         <form [formGroup]="mUserForm" (ngSubmit)="onFormSubmit()">
           <mat-form-field class="example-full-width">
@@ -34,5 +30,9 @@
           </div>
         </form>
       </mat-card>
+      <div class="example-loading-shade"
+           *ngIf="isLoadingResults">
+        <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+      </div>
     </div>
   </ion-content>

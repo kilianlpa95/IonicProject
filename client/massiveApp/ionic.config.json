@@ -1,5 +1,7 @@
 {
   "name": "massiveApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
