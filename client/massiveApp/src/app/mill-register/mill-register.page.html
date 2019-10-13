@@ -23,7 +23,7 @@
             </mat-error>
           </mat-form-field>
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="User age" formControlName="age"
+            <input type="number" matInput placeholder="User age" formControlName="age"
                    [errorStateMatcher]="matcher">
             <mat-error>
               <span *ngIf="!mUserForm.get('age').valid && mUserForm.get('age').touched">Please enter age</span>

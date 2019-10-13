@@ -7,7 +7,7 @@ import { MillUser } from './millUser';
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
-const apiUrl = 'http://localhost:8080/api/millUsers';
+const apiUrl = 'http://localhost:8080/api/millUser';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +25,7 @@ export class ApiService {
   }
 
   getMillUsers(): Observable<MillUser[]> {
-    return this.http.get<MillUser[]>(apiUrl)
+    return this.http.get<MillUser[]>(apiUrl + "s")
       .pipe(
         tap(millUser => console.log('fetched millUsers')),
         catchError(this.handleError('getMillUsers', []))
@@ -33,7 +33,7 @@ export class ApiService {
   }
   
   getMillUser(id: any): Observable<MillUser> {
-    const url = `${apiUrl}/${id}`;
+    const url = `${apiUrl}s/${id}`;
     return this.http.get<MillUser>(url).pipe(
       tap(_ => console.log(`fetched millUser id=${id}`)),
       catchError(this.handleError<MillUser>(`getMillUser id=${id}`))
@@ -42,7 +42,7 @@ export class ApiService {
   
   addMillUser(millUser: MillUser): Observable<MillUser> {
     return this.http.post<MillUser>(apiUrl, millUser, httpOptions).pipe(
-      tap((usr: MillUser) => console.log(`added millUser w/ id=${usr.id}`)),
+      tap((usr: MillUser) => console.log(`added millUser with id=${usr.id}`)),
       catchError(this.handleError<MillUser>('addMillUser'))
     );
   }
