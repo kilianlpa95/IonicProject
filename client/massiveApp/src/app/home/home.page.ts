@@ -28,10 +28,6 @@ export class HomePage implements OnInit{
 
     millUser: MillUser[] = [];
 
-    millDetail(){
-      this.router.navigate(['/mill-register'])
-    }
-
     async getMillUsers() {
       const loading = await this.loadingController.create({
         message: 'Loading...'

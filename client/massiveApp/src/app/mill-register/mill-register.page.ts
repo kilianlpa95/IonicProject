@@ -42,9 +42,13 @@ export class MillRegisterPage implements OnInit {
     this.isLoadingResults = true;
     this.api.addMillUser(this.mUserForm.value)
       .subscribe((res: any) => {
+        console.log("entra y luego que");
           //const id = res.id;
+          console.log("entra y luego que2");
           this.isLoadingResults = false;
+          console.log("entra y luego que3");
           this.router.navigate(['/home']);
+          console.log("entra y luego que4");
         }, (err: any) => {
           console.log(err);
           this.isLoadingResults = false;

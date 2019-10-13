@@ -36,7 +36,7 @@ export class ApiService {
     const url = `${apiUrl}s/${id}`;
     return this.http.get<MillUser>(url).pipe(
       tap(_ => console.log(`fetched millUser id=${id}`)),
-      catchError(this.handleError<MillUser>(`getMillUser id=${id}`))
+      catchError(this.handleError<MillUser>(`getMillUser with id=${id}`))
     );
   }
   

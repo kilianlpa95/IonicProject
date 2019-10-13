@@ -51,6 +51,7 @@ export class MillModifierPage implements OnInit {
 
   onFormSubmit() {
     this.isLoadingResults = true;
+    console.log(this.mUserForm.value)
     this.api.updateMillUser(this.id, this.mUserForm.value)
       .subscribe((res: any) => {
           const id = res.id;
